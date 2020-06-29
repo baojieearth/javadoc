@@ -1,0 +1,26 @@
+<idea-plugin>
+    <id>com.baojieearth.javadoc</id>
+    <name>JavaDoc Generator</name>
+    <vendor email="09052437@hdu.edu.cn" url="https://www.baojieearth.cn">baojieearth</vendor>
+
+    <description><![CDATA[
+    生成javadoc 信息<br>
+    类 文件头的 author信息<br>
+    方法上的 方法描述、参数、返回、异常等
+    ]]></description>
+
+    <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+        <action id="JavaDoc Generator" class="com.baojieearth.action.JavaDocGeneratorAction" text="生成JavaDoc">
+            <add-to-group group-id="GenerateGroup" anchor="last"/>
+        </action>
+    </actions>
+</idea-plugin>
