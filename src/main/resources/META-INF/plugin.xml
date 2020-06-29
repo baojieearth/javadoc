@@ -15,6 +15,7 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
+        <themeProvider id="5b41f6f4-4635-49ca-bbe7-7a04e5d6337f" path="/com/baojieearth/ui/Setting.theme.json"/>
     </extensions>
 
     <actions>
