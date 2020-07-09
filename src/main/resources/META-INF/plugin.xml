@@ -1,21 +1,24 @@
 <idea-plugin>
     <id>com.baojieearth.javadoc</id>
     <name>JavaDoc Generator</name>
-    <vendor email="09052437@hdu.edu.cn" url="https://www.baojieearth.cn">baojieearth</vendor>
+    <vendor email="09052437@hdu.edu.cn" url="https://github.com/baojieearth/javadoc">jie bao</vendor>
 
     <description><![CDATA[
-    生成javadoc 信息<br>
-    类 文件头的 author信息<br>
-    方法上的 方法描述、参数、返回、异常等
+    This plugin is for project already created without java doc, function include: <br>
+    1. add header java doc for java class file, such as @author. <br>
+    2. generate java doc for class method
     ]]></description>
 
     <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
          on how to target different products -->
     <depends>com.intellij.modules.platform</depends>
 
+    <idea-version since-build="201.7846"/>
+
+    <version>1.0.0</version>
+
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
-        <themeProvider id="5b41f6f4-4635-49ca-bbe7-7a04e5d6337f" path="/com/baojieearth/ui/Setting.theme.json"/>
     </extensions>
 
     <actions>
