@@ -19,6 +19,10 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
+        <applicationService serviceImplementation="com.baojieearth.state.AppSettingsState"/>
+        <applicationConfigurable parentId="tools" instance="com.baojieearth.config.AppSettingsConfigurable"
+                                 id="com.baojieearth.config.AppSettingsConfigurable"
+                                 displayName="JavaDoc Generator Settings"/>
     </extensions>
 
     <actions>
