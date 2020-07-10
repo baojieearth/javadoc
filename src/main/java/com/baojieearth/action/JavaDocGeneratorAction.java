@@ -1,15 +1,13 @@
 package com.baojieearth.action;
 
+import com.baojieearth.dialog.DescDialogWrapper;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.editor.Editor;
-import com.intellij.openapi.editor.SelectionModel;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.ui.Messages;
 import com.intellij.psi.PsiFile;
-import org.apache.commons.lang3.StringUtils;
 
 /**
  * @author baojie 2020/6/22
@@ -30,13 +28,15 @@ public class JavaDocGeneratorAction extends AnAction {
         if (null == editor) {
             return;
         }
-        SelectionModel selectionModel = editor.getSelectionModel();
-        String selectedText = selectionModel.getSelectedText();
-        if (StringUtils.isBlank(selectedText)) {
-            return;
-        }
+        DescDialogWrapper descDialogWrapper = new DescDialogWrapper();
+        descDialogWrapper.show();
+//        SelectionModel selectionModel = editor.getSelectionModel();
+//        String selectedText = selectionModel.getSelectedText();
+//        if (StringUtils.isBlank(selectedText)) {
+//            return;
+//        }
         //显示对话框
-        Messages.showMessageDialog(project, classPath, selectedText, Messages.getInformationIcon());
+//        Messages.showMessageDialog(project, classPath, selectedText, Messages.getInformationIcon());
 
     }
 

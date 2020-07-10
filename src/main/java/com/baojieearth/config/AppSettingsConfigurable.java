@@ -3,7 +3,6 @@ package com.baojieearth.config;
 import com.baojieearth.component.AppSettingsComponent;
 import com.baojieearth.state.AppSettingsState;
 import com.intellij.openapi.options.Configurable;
-import com.intellij.openapi.options.ConfigurationException;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.Nullable;
 
@@ -18,7 +17,7 @@ public class AppSettingsConfigurable implements Configurable {
 
     @Override
     public @Nls(capitalization = Nls.Capitalization.Title) String getDisplayName() {
-        return "JavaDoc Settings";
+        return "JavaDoc Generator Settings";
     }
 
     @Override
@@ -35,19 +34,23 @@ public class AppSettingsConfigurable implements Configurable {
     @Override
     public boolean isModified() {
         AppSettingsState settings = AppSettingsState.getInstance();
-        return !appSettingsComponent.getHeaderText().equals(settings.getHeader());
+        boolean isModified = !appSettingsComponent.getHeaderDocTemplate().equals(settings.getHeaderDocTemplate());
+        isModified |= !appSettingsComponent.getMethodDocTemplate().equals(settings.getMethodDocTemplate());
+        return isModified;
     }
 
     @Override
-    public void apply() throws ConfigurationException {
+    public void apply() {
         AppSettingsState settings = AppSettingsState.getInstance();
-        settings.setHeader(appSettingsComponent.getHeaderText());
+        settings.setHeaderDocTemplate(appSettingsComponent.getHeaderDocTemplate());
+        settings.setMethodDocTemplate(appSettingsComponent.getMethodDocTemplate());
     }
 
     @Override
     public void reset() {
         AppSettingsState settings = AppSettingsState.getInstance();
-        appSettingsComponent.setHeaderText(settings.getHeader());
+        appSettingsComponent.setHeaderDocTemplate(settings.getHeaderDocTemplate());
+        appSettingsComponent.setMethodDocTemplate(settings.getMethodDocTemplate());
     }
 
     @Override

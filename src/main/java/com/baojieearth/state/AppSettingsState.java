@@ -17,7 +17,9 @@ import org.jetbrains.annotations.Nullable;
 )
 public class AppSettingsState implements PersistentStateComponent<AppSettingsState> {
 
-    private String header;
+    private String headerDocTemplate;
+
+    private String methodDocTemplate;
 
     public static AppSettingsState getInstance() {
         return ServiceManager.getService(AppSettingsState.class);
@@ -34,11 +36,19 @@ public class AppSettingsState implements PersistentStateComponent<AppSettingsSta
         XmlSerializerUtil.copyBean(state, this);
     }
 
-    public String getHeader() {
-        return header;
+    public String getHeaderDocTemplate() {
+        return headerDocTemplate;
     }
 
-    public void setHeader(String header) {
-        this.header = header;
+    public void setHeaderDocTemplate(String headerDocTemplate) {
+        this.headerDocTemplate = headerDocTemplate;
+    }
+
+    public String getMethodDocTemplate() {
+        return methodDocTemplate;
+    }
+
+    public void setMethodDocTemplate(String methodDocTemplate) {
+        this.methodDocTemplate = methodDocTemplate;
     }
 }
